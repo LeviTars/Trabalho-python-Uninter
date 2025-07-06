@@ -1,0 +1,62 @@
+#Mensagem de boas vindas ao usuário
+print('|', '   Bem-vindo a Sorveteria do Levi Tavares  ', '|')
+print('-'*18, 'Cardápio', '-'*19)
+print('-'*47)
+print('----|', 'TAMANHO', '|', 'CUPUAÇU (CP)', '|', ' AÇAI (AC)', '|----')
+print('----|', '   P   ', '|', '  R$ 9.00   ', '|', '  R$ 11.00', '|----')
+print('----|', '   M   ', '|', '  R$ 14.00  ', '|', '  R$ 16.00', '|----')
+print('----|', '   G   ', '|', '  R$ 18.00  ', '|', '  R$ 20.00', '|----')
+print('-'*47)
+print('\n')
+
+#variável para acumular o valor dos produtos
+acumulador = 0
+
+while True:
+  sabor = input('Qual sabor você deseja? (CP/AC) ')
+  if (sabor.upper() != 'CP' and sabor.upper() != 'AC'):#condição para o usuário não digitar uma opção fora do cardápio. Não sendo possível seguir sem preencher corretamente
+    print('Sabor invalido. Tente novamente')
+    continue
+  tamanho = input('Qual tamanho você deseja? (P/M/G) ')
+  if (tamanho.upper() != 'P' and tamanho.upper() != 'M' and tamanho.upper() != 'G'):#condição para o usuário não digitar uma opção fora do cardápio. Não sendo possível seguir sem preencher corretamente
+    print('Tamanho inválido. Tente novamente')
+    continue
+
+#Condições para a escolha do produto
+  if (sabor.upper() == 'CP' and tamanho.upper() == 'P'):
+    acumulador += 9.00
+    print('Você pediu um Cupuaçu no tamanho P: R$9.00')
+
+  elif (sabor.upper() == 'AC' and tamanho.upper() == 'P'):
+    acumulador += 11.00
+    print('Você pediu um Açai no tamanho P: R$11.00')
+
+  elif (sabor.upper() == 'CP' and tamanho.upper() == 'M'):
+    acumulador += 14.00
+    print('Você pediu um Cupuaçu no tamanho M: R$14.00')
+
+  elif (sabor.upper() == 'AC' and tamanho.upper() == 'M'):
+    acumulador += 16.00
+    print('Você pediu um Açai no tamanho M: R$16.00')
+
+  elif (sabor.upper() == 'CP' and tamanho.upper() == 'G'):
+    acumulador += 18.00
+    print('Você pediu um Cupuaçu no tamanho G: R$18.00')
+
+  elif (sabor.upper() == 'AC' and tamanho.upper() == 'G'):
+    acumulador += 20.00
+    print('Você pediu um Açai no tamanho G: R$20.00')
+
+  else:
+    print('Opção inválida')
+    continue
+
+  print('\n')
+  pergunta = input('Deseja pedir mais alguma coisa?(S/N): ')
+  if pergunta.upper() == 'N':
+    print('\n')
+    print(f'O valor total a ser pago: R${acumulador}')
+    print('Obrigado por comprar conosco!')
+    print('VOLTE SEMPRE :)')
+    break
+#encerrando laço de retição após a conclusão do pedido
